@@ -1,0 +1,42 @@
+﻿@model BallGameMVC.Models.Environ
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Environ</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EnvName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EnvName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EnvLocation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EnvLocation)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EnvTurfType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EnvTurfType)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.EnvRegistrationDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.EnvRegistrationDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.EnvID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
