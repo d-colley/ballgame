@@ -8,6 +8,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.DependencyInjection;
 using BallGameMVC.Data;
+using BallGameMVC.Areas.Identity.Data;
 
 namespace BallGameMVC
 {
@@ -22,8 +23,12 @@ namespace BallGameMVC
                 var services = scope.ServiceProvider;
                 try
                 {
-                    var context = services.GetRequiredService<BallGameDBContext>();
-                    DbInitializer.Initialize(context);
+                    BallGameDBContext context = services.GetRequiredService<BallGameDBContext>();
+                    BallGameMVCIdentityDbContext identity_context = services.GetRequiredService<BallGameMVCIdentityDbContext>();
+                    //var identity_context = services.GetRequiredService<BallGameMVCIdentityDbContext>();
+                    //DbInitializer.Initialize(context);
+                    //DbInitializer.Initialize(identity_context);
+
                 }
                 catch (Exception ex)
                 {
